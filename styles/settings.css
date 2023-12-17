@@ -1,0 +1,201 @@
+:root {
+  --primary: rgba(96, 101, 227, 1);
+  --primary-dark: rgba(88, 92, 180, 1);
+  --grey: rgba(153, 153, 153, 1);
+  --normal: 500;
+  --header: 2.5vw;
+  --table: 1.5vw;
+  --table-header: 1.25vw;
+  --link: 1.2vw;
+  --subtitle: 1.35vw;
+  --image-size: 2vw;
+}
+
+body {
+  font-family: "GT Eesti Pro Display", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+}
+
+.slidermenu {
+  background-color: var(--primary-dark);
+  width: 18vw;
+}
+
+.slidermenu_header {
+  margin-right: 1.6vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--header);
+  font-weight: bold;
+  color: white;
+  height: 5vw;
+  border-radius: 0px 0px 30px 0px;
+  background-color: var(--primary);
+  box-shadow: -2px 9px 37.1px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 3.2vw;
+  font-weight: var(--normal);
+}
+
+.slidermenu_el {
+  display: flex;
+  font-weight: var(--normal);
+  font-size: var(--link);
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vw 1vw;
+  transition: all ease-out 0.2s;
+  cursor: pointer;
+}
+
+.slidermenu_el:hover {
+  background-color: var(--primary);
+  transition: all ease-out 0.2s;
+}
+
+.slidermenu_el_desc {
+  display: flex;
+  gap: 1vw;
+  align-items: center;
+  margin-right: 1vw;
+}
+
+.slidermenu_el_desc img {
+  height: var(--image-size);
+}
+
+.slidermenu_el_desc_txt {
+  color: white;
+}
+
+.slidermenu_el_arrow img {
+  height: var(--image-size);
+}
+
+.content {
+  padding: 2.6vw 4vw;
+  width: 100%;
+}
+
+.content_header {
+  font-size: var(--header);
+  font-weight: var(--normal);
+}
+
+.content_btn-holder {
+  display: flex;
+  justify-content: start;
+}
+
+.content_btn-holder_btn {
+  color: white;
+  font-size: var(--subtitle);
+  font-weight: var(--normal);
+  font-family: "GT Eesti Pro Display", sans-serif;
+  background-color: var(--primary);
+  cursor: pointer;
+  padding: 0.6vw 2.5vw;
+  border-radius: 3vw;
+  box-shadow: 6px 6px 30px 0px rgba(0, 0, 0, 0.25);
+}
+
+.content_apikey-holder {
+  margin-top: 5vw;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1vw;
+  margin-bottom: 2vw;
+}
+
+.content_apikey-holder input {
+  font-family: "GT Eesti Pro Display", sans-serif;
+  border-radius: 1vw;
+  padding: 0.5vw 1vw;
+  font-size: var(--subtitle);
+  border: 2px solid var(--grey);
+  width: 50%;
+}
+
+.content_apikey-holder label {
+  font-size: var(--table-header);
+}
+
+.content_btn-holder {
+  display: flex;
+  gap: 1vw;
+  align-items: center;
+}
+
+.content_btn-holder_switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.content_btn-holder_switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--grey);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--primary);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--primary);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

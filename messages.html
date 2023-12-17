@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PyBot</title>
+    <link
+      rel="shortcut icon"
+      type="image/svg"
+      href="assets/icon_settings.svg"
+    />
+    <link rel="stylesheet" type="text/css" href="styles/messages.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="slidermenu">
+        <div class="slidermenu_header">PyBot</div>
+        <a class="slidermenu_el" href="/">
+          <div class="slidermenu_el_desc">
+            <img src="assets/icon_users.svg" alt="" />
+            <div class="slidermenu_el_desc_txt">Пользователи</div>
+          </div>
+          <div class="slidermenu_el_arrow">
+            <img src="assets/icon_arrow.svg" alt="" />
+          </div>
+        </a>
+        <a class="slidermenu_el" href="/messages.html">
+          <div class="slidermenu_el_desc">
+            <img src="assets/icon_message.svg" alt="" />
+            <div class="slidermenu_el_desc_txt">Сообщения</div>
+          </div>
+          <div class="slidermenu_el_arrow">
+            <img src="assets/icon_arrow.svg" alt="" />
+          </div>
+        </a>
+        <a class="slidermenu_el" href="/settings.html">
+          <div class="slidermenu_el_desc">
+            <img src="assets/icon_settings.svg" alt="" />
+            <div class="slidermenu_el_desc_txt">Настройки</div>
+          </div>
+          <div class="slidermenu_el_arrow">
+            <img src="assets/icon_arrow.svg" alt="" />
+          </div>
+        </a>
+      </div>
+      <div class="content">
+        <div class="content_header">Пользователи</div>
+        <div class="table">
+          <div class="table_header">
+            <div class="table_header_el">Номер</div>
+            <div class="table_header_el">Команда</div>
+            <div class="table_header_el">Условия</div>
+          </div>
+          <div class="table_body">
+            <div class="table_body_row">
+              <div class="table_body_row_el number">1.</div>
+              <div class="table_body_row_el">/start</div>
+              <div class="table_body_row_el">После предыдущей</div>
+              <div class="table_body_row_el_btns">
+                <button class="table_body_row_btn">
+                  <img src="assets/icon_edit.svg" alt="" />
+                </button>
+                <button class="table_body_row_btn">
+                  <img src="assets/icon_delete.svg" alt="" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content_btn-holder">
+          <button class="content_btn-holder_btn" id="openModal">
+            <img src="assets/icon_plus.svg" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <div class="modal" id="modal">
+    <div class="modal_content">
+      <div class="modal_content_close-btn" id="closeModal">
+        <img src="assets/icon_close.svg" />
+      </div>
+      <div class="modal_content_header">Добавить команду</div>
+      <div class="modal_content_row">
+        <div class="modal_content_row_el">
+          <label>Текст сообщения</label>
+          <textarea rows="5" type="text" name="" id=""></textarea>
+        </div>
+        <div class="modal_content_row_el filedrop">
+          <button class="modal_content_row_el_btn">
+            <img src="assets/icon_paperclip.svg" alt="" />
+          </button>
+          <label>Имя файла</label>
+        </div>
+      </div>
+      <div class="modal_content_row">
+        <div class="modal_content_row_el drop">
+          <label>Условие отправки</label>
+          <select id="sendingconditions">
+            <option value="1">После предыдущей</option>
+            <option value="2">После команды</option>
+            <option value="3">В назначенное время</option>
+          </select>
+        </div>
+        <div class="modal_content_row_el args">
+          <label>Команда / время / интервал</label>
+          <input type="text" name="" id="" />
+        </div>
+      </div>
+      <button class="modal_content_confirm-btn" id="confirmModal">
+        Подтвердить
+      </button>
+    </div>
+  </div>
+</html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var button = document.querySelector(".table_body_row_btn");
+    button.addEventListener("click", function () {
+      console.log("click");
+    });
+  });
+
+  const modal = document.getElementById("modal");
+  const openModalBtn = document.getElementById("openModal");
+  const closeModalBtn = document.getElementById("closeModal");
+  const confirmModalBtn = document.getElementById("confirmModal");
+
+  openModalBtn.addEventListener("click", () => {
+    modal.style.display = "block";
+  });
+
+  closeModalBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  confirmModalBtn.addEventListener("click", () => {
+    console.log("confirm");
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+</script>

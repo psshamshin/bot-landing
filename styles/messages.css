@@ -1,0 +1,261 @@
+:root {
+  --primary: rgba(96, 101, 227, 1);
+  --primary-dark: rgba(88, 92, 180, 1);
+  --grey: rgba(153, 153, 153, 1);
+  --normal: 500;
+  --header: 2.5vw;
+  --table: 1.5vw;
+  --table-header: 1.25vw;
+  --link: 1.2vw;
+  --subtitle: 1.35vw;
+  --image-size: 2vw;
+}
+
+body {
+  font-family: "GT Eesti Pro Display", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+}
+
+.slidermenu {
+  background-color: var(--primary-dark);
+  width: 18vw;
+}
+
+.slidermenu_header {
+  margin-right: 1.6vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--header);
+  font-weight: bold;
+  color: white;
+  height: 5vw;
+  border-radius: 0px 0px 30px 0px;
+  background-color: var(--primary);
+  box-shadow: -2px 9px 37.1px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 3.2vw;
+  font-weight: var(--normal);
+}
+
+.slidermenu_el {
+  display: flex;
+  font-weight: var(--normal);
+  font-size: var(--link);
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vw 1vw;
+  transition: all ease-out 0.2s;
+  cursor: pointer;
+}
+
+.slidermenu_el:hover {
+  background-color: var(--primary);
+  transition: all ease-out 0.2s;
+}
+
+.slidermenu_el_desc {
+  display: flex;
+  gap: 1vw;
+  align-items: center;
+  margin-right: 1vw;
+}
+
+.slidermenu_el_desc img {
+  height: var(--image-size);
+}
+
+.slidermenu_el_desc_txt {
+  color: white;
+}
+
+.slidermenu_el_arrow img {
+  height: var(--image-size);
+}
+
+.content {
+  padding: 2.6vw 4vw;
+  width: 100%;
+}
+
+.content_header {
+  font-size: var(--header);
+  font-weight: var(--normal);
+}
+
+.table {
+  margin-top: 5vw;
+  margin-bottom: 1vw;
+}
+
+.table_header {
+  padding-left: 2vw;
+  padding-right: 25vw;
+  margin-bottom: 1vw;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  font-size: var(--table-header);
+  color: var(--grey);
+}
+
+.table_body {
+  width: 100%;
+}
+
+.table_body_row {
+  align-items: center;
+  padding: 1.2vw 1.7vw;
+  background-color: white;
+  border-radius: 1.5vw;
+  box-shadow: 6px 6px 30px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--subtitle);
+}
+
+.number {
+  color: var(--primary);
+}
+
+.table_body_row_btn {
+  background-color: transparent;
+  color: white;
+  border-radius: 0.5vw;
+  cursor: pointer;
+  font-size: var(--subtitle);
+  font-family: "GT Eesti Pro Display", sans-serif;
+}
+
+.table_body_row_btn:hover {
+  box-shadow: 6px 6px 30px 0px rgba(0, 0, 0, 0.25);
+}
+
+.table_body_row_btn img {
+  height: 3vw;
+}
+
+.content_btn-holder {
+  display: flex;
+  justify-content: center;
+}
+
+.content_btn-holder_btn {
+  background-color: var(--primary);
+  cursor: pointer;
+  padding: 0.6vw 2.5vw;
+  border-radius: 3vw;
+  box-shadow: 6px 6px 30px 0px rgba(0, 0, 0, 0.25);
+}
+
+.content_btn-holder_btn img {
+  width: var(--image-size);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  text-align: center;
+  align-items: center;
+}
+
+.modal_content {
+  border-radius: 1.5vw;
+  padding: 2vw;
+  position: relative;
+  margin: auto;
+  margin-top: 8%;
+  width: 50%;
+  height: 60%;
+  background-color: #fff;
+}
+
+.modal_content_close-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 1vw;
+  right: 1vw;
+}
+
+.modal_content_header {
+  font-size: var(--header);
+  font-weight: var(--normal);
+  margin-bottom: 1vw;
+}
+
+.modal_content_row {
+  align-items: start;
+  display: flex;
+  gap: 1vw;
+  margin-bottom: 1.5vw;
+}
+
+.modal_content_row_el {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  gap: 0.5vw;
+}
+
+.modal_content_row_el input,
+textarea,
+select {
+  resize: none;
+  font-family: "GT Eesti Pro Display", sans-serif;
+  border-radius: 1vw;
+  padding: 0.5vw 1vw;
+  font-size: var(--subtitle);
+  border: 2px solid var(--grey);
+  width: 90%;
+}
+
+.modal_content_row_el label {
+  font-size: var(--table-header);
+}
+
+.filedrop {
+  margin-top: 2vw;
+  display: flex;
+  gap: 1vw;
+  flex-direction: row;
+  align-items: center;
+}
+
+.modal_content_row_el_btn {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.modal_content_confirm-btn {
+  background-color: var(--primary);
+  padding: 0.6vw 2.5vw;
+  color: white;
+  font-family: "GT Eesti Pro Display", sans-serif;
+  font-size: var(--subtitle);
+  border-radius: 3vw;
+  cursor: pointer;
+  position: absolute;
+  bottom: 1.5vw;
+  right: 1.5vw;
+}
